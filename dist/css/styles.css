@@ -1,0 +1,395 @@
+body,
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "akira";
+  src: url("../assets/fonts/akira_expanded_demo-webfont.woff2") format("woff2"), url("../assets/fonts/akira_expanded_demo-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: rgb(236, 242, 255);
+  font-family: "akira", sans-serif;
+}
+
+@media only screen and (max-width: 40em) {
+  body {
+    font-size: 11px;
+  }
+}
+a {
+  text-decoration: none;
+  color: rgb(3, 201, 136);
+  transition: 150ms ease-in all;
+}
+a:hover {
+  color: rgb(19, 0, 90);
+}
+
+header {
+  padding-inline: 3rem;
+  min-height: 100vh;
+  height: auto;
+}
+header .intro {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem 0;
+}
+header h1 {
+  color: rgb(19, 0, 90);
+  font-size: 5rem;
+}
+header .achievements {
+  display: flex;
+  gap: 3rem;
+}
+header .achievements .box {
+  background-color: rgb(255, 178, 0);
+  color: white;
+  width: 200px;
+  padding: 15px 0px;
+  display: grid;
+  place-items: center;
+  border-radius: 0.6rem;
+}
+header .achievements .box ~ .box {
+  background-color: rgb(39, 123, 192);
+}
+
+nav {
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  width: 100%;
+  height: 3.5rem;
+  position: fixed;
+  padding-left: 3rem;
+  top: 0;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  transition: all ease-in-out 200ms;
+}
+
+.nav-scrolled {
+  background-color: white;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  color: rgb(19, 0, 90);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  max-width: 340px;
+  justify-content: space-between;
+}
+.logo div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.logo h4 {
+  color: rgb(19, 0, 90);
+}
+.logo a {
+  font-size: 0.9rem;
+}
+
+.social, .contact {
+  position: relative;
+}
+.social img ~ img, .contact img ~ img {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+}
+.social:hover img ~ img, .contact:hover img ~ img {
+  opacity: 1;
+  z-index: 1;
+  transition: all ease-in 100ms;
+}
+
+.contact {
+  width: 32px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media only screen and (max-width: 40em) {
+  header h1 {
+    font-size: 3rem;
+  }
+  header .logo {
+    max-width: 200px;
+  }
+}
+.about, .services, .works {
+  background-color: #03c988;
+  padding: 3rem;
+}
+.about h2, .services h2, .works h2 {
+  display: inline-block;
+  margin-left: 3rem;
+  color: rgb(19, 0, 90);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  cursor: default;
+}
+.about h2::before, .services h2::before, .works h2::before {
+  content: "";
+  width: 0;
+  height: 4px;
+  position: absolute;
+  background-color: white;
+  top: 95%;
+  left: 0;
+  transition: all ease-in-out 200ms;
+}
+.about h2:hover::before, .services h2:hover::before, .works h2:hover::before {
+  width: 100%;
+}
+
+@media only screen and (max-width: 40em) {
+  .about, .services, .works {
+    padding: 1.5rem;
+  }
+}
+.about {
+  min-height: 100vh;
+  height: auto;
+}
+
+.wrapper {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  color: rgb(19, 0, 90);
+  font-size: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.wrapper .img {
+  transition-delay: 200ms;
+  aspect-ratio: 9/12;
+  width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.wrapper p {
+  padding-right: calc(10px + 1rem);
+}
+.wrapper p:first-child {
+  padding-top: 1rem;
+}
+.wrapper p:last-child {
+  padding-bottom: 1rem;
+}
+.wrapper:hover {
+  background-color: white;
+  color: black;
+  transition: all ease-in 200ms;
+}
+
+@media only screen and (max-width: 40em) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .wrapper .img {
+    width: 100%;
+  }
+  .wrapper p {
+    padding-inline: 1rem;
+  }
+}
+@media screen and (min-width: 48em) {
+  .about {
+    padding-inline: 1rem;
+  }
+  .about .wrapper {
+    margin-inline: 3rem;
+  }
+}
+.services {
+  background-color: rgb(236, 242, 255);
+  min-height: 100vh;
+  height: 100%;
+}
+.services h2 {
+  margin-left: 1rem;
+}
+.services h2::before {
+  background-color: black;
+}
+.services .card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: space-between;
+  padding-left: 1rem;
+  margin-top: 2rem;
+}
+.services .card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  max-width: 350px;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.services .card .card-img {
+  width: 150px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.services .card h4 {
+  color: rgb(215, 227, 252);
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid rgb(215, 227, 252);
+}
+.services .card .backdrop {
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: inherit;
+  background-color: rgba(255, 255, 255, 0.2);
+  top: 0;
+  left: 0;
+  transform: scale(0.8) skewX(45deg);
+}
+.services .card:hover {
+  transform: scale(1.05);
+  transition: all ease-in-out 300ms;
+}
+.services .card:hover .backdrop {
+  opacity: 1;
+  transform: scale(1);
+  transition: all ease-in-out 300ms;
+}
+.services .card1 {
+  background-image: linear-gradient(60deg, rgb(255, 145, 0), rgb(116, 26, 254));
+  box-shadow: 1px 1px 10px rgba(255, 145, 0, 0.6), -1px -1px 10px rgba(116, 26, 254, 0.6);
+}
+.services .card2 {
+  transition-delay: 200ms;
+  background-image: linear-gradient(60deg, rgb(107, 193, 255), rgb(116, 26, 254));
+  box-shadow: 1px 1px 10px rgba(107, 193, 255, 0.6), -1px -1px 10px rgba(116, 26, 254, 0.6);
+}
+.services .card3 {
+  transition-delay: 300ms;
+  background-image: linear-gradient(60deg, rgb(255, 101, 166), rgb(116, 26, 254));
+  box-shadow: 1px 1px 10px rgba(255, 101, 166, 0.6), -1px -1px 10px rgba(116, 26, 254, 0.6);
+}
+.services .card4 {
+  transition-delay: 400ms;
+  background-image: linear-gradient(60deg, rgb(42, 157, 143), rgb(116, 26, 254));
+  box-shadow: 1px 1px 10px rgba(42, 157, 143, 0.6), -1px -1px 10px rgba(116, 26, 254, 0.6);
+}
+
+.card > * {
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.works {
+  background-color: white;
+  min-height: 100vh;
+  height: 100%;
+  padding: 3rem 0;
+}
+.works h2 {
+  margin-left: 4rem;
+}
+.works h2::before {
+  background-color: black;
+}
+.works .container {
+  width: 100%;
+  height: 70%;
+  display: grid;
+  place-items: center;
+}
+.works .image-wrapper {
+  overflow: hidden;
+  width: 52%;
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+  grid-template-columns: repeat(3, minmax(33%, 170px));
+}
+.works .image-wrapper img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  opacity: 1;
+  overflow: hidden;
+  transition: all 300ms ease-in;
+}
+.works .image-wrapper img:nth-child(5) {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.works .image-wrapper img:hover {
+  opacity: 1;
+  scale: 1.1;
+}
+.works .image-wrapper img:not(:hover) {
+  opacity: 0.6;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all ease-in-out 800ms;
+}
+
+.visible {
+  transform: translateX(0);
+  filter: blur(0);
+  opacity: 1;
+}
+
+@media only screen and (max-width: 40em) {
+  .works .container .image-wrapper {
+    width: 70%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .works .container .image-wrapper img {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=styles.css.map */
