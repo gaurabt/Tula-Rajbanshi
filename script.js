@@ -39,4 +39,26 @@ elements.forEach((el) => {
 
 observerTwo.observe(header)
 
+///hamburger menu
 
+const navItems = document.querySelectorAll('nav > a'
+)
+
+console.log(navItems);
+
+const hamburger = document.querySelector('.ham')
+isOpen = false
+
+hamburger.addEventListener('click', () => {
+  isOpen = true
+  hamburger.classList.toggle('active')
+  console.log('clicked');
+  nav.classList.toggle('nav-active')
+  document.body.body.style.overflowY = 'hidden'
+})
+
+navItems.forEach((navItem) => {
+  navItem.addEventListener('click', ()=> {
+    nav.classList.remove('nav-active')
+  })
+})
