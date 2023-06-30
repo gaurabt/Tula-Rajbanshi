@@ -110,6 +110,7 @@ nav{
 }
 
 .ham {
+  display: none;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -161,6 +162,9 @@ nav{
 }
 
 @media only screen and (max-width: 40em) {
+  .ham{
+    display: block;
+  }
   nav{
     inset: 0;
     height: 100vh;
